@@ -1,0 +1,712 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>NOXH Estampados | Remeras lisas y personalizadas</title>
+  <meta name="description" content="Remeras lisas y personalizadas: oversize, básicas y estampas premium. Pedí tu mockup y cotizá por WhatsApp." />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="NOXH Estampados | Tu marca empieza en una remera" />
+  <meta property="og:description" content="Remeras lisas y personalizadas: oversize, básicas y estampas premium. Pedí tu mockup." />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="es_AR" />
+  <meta property="og:image" content="https://iili.io/fsDmkrv.md.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="NOXH Estampados | Remeras lisas y personalizadas" />
+  <meta name="twitter:description" content="Pedí tu mockup y cotizá por WhatsApp. Oversize, básicas y estampas premium." />
+  <meta name="twitter:image" content="https://iili.io/fsDmkrv.md.jpg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    /* Fuente del título (poné el .ttf en la MISMA carpeta que el index.html con este nombre exacto) */
+    @font-face{
+      font-family:"VehicleBreaksDown";
+      src: url("VehicleBreaksDown-Regular.ttf") format("truetype");
+      font-weight:400;
+      font-style:normal;
+      font-display:swap;
+    }
+
+    :root{
+      --bg:#07070c;
+      --text:#f8f9ff;
+      --muted:#b9bdd7;
+      --line:rgba(255,255,255,.10);
+      --ok:#25D366;
+
+      /* NEÓN (cian + verde) */
+      --cyan-neon:#00F5FF;   /* cian neón */
+      --green-neon:#39FF14;  /* verde neón */
+      --pink-neon:#ff2bd6;
+      --blue-neon:#3a7bff;
+
+      /* Degradé NEÓN (dominante cian/verde) */
+      --brand-grad: linear-gradient(135deg,
+        rgba(0, 245, 255, 1) 0%,
+        rgba(57, 255, 20, 1) 36%,
+        rgba(255, 43, 214, .95) 62%,
+        rgba(58, 123, 255, .95) 84%,
+        rgba(255,255,255,.95) 100%
+      );
+
+      --shadow: 0 18px 60px rgba(0,0,0,.55);
+      --radius: 20px;
+      --max: 1100px;
+
+      /* IMÁGENES */
+      --hero-bg: url("https://iili.io/fsDpNuS.md.jpg"); /* overlay background */
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      background:
+        radial-gradient(900px 520px at 12% -10%, rgba(0,245,255,.22), transparent 58%),
+        radial-gradient(900px 520px at 92% 6%, rgba(57,255,20,.18), transparent 58%),
+        radial-gradient(900px 520px at 50% 86%, rgba(255,43,214,.10), transparent 60%),
+        radial-gradient(900px 520px at 50% 30%, rgba(58,123,255,.10), transparent 60%),
+        var(--bg);
+      color:var(--text);
+      line-height:1.35;
+      overflow-x:hidden;
+    }
+    a{color:inherit}
+    .wrap{max-width:var(--max); margin:0 auto; padding:0 18px;}
+
+    .topbar{
+      position:sticky; top:0; z-index:40;
+      backdrop-filter: blur(14px);
+      background: linear-gradient(to bottom, rgba(7,7,12,.84), rgba(7,7,12,.42));
+      border-bottom:1px solid var(--line);
+    }
+    .topbar-inner{display:flex; align-items:center; justify-content:space-between; padding:14px 0;}
+    .brand{display:flex; align-items:center; gap:12px; min-width:0;}
+
+    .logoWrap{
+      width:46px; height:46px; border-radius:18px;
+      padding:2px;
+      background: var(--brand-grad);
+      box-shadow:
+        0 12px 34px rgba(0,0,0,.45),
+        0 0 28px rgba(0,245,255,.25),
+        0 0 30px rgba(57,255,20,.18);
+    }
+    .logoInner{
+      width:100%; height:100%;
+      border-radius:16px;
+      background: rgba(255,255,255,.06);
+      border:1px solid rgba(255,255,255,.14);
+      display:grid; place-items:center;
+      overflow:hidden;
+      backdrop-filter: blur(10px);
+    }
+    .logoImg{
+      width:92%;
+      height:92%;
+      object-fit:contain;
+      display:block;
+      background: transparent;
+      border-radius:12px;
+    }
+
+    .brand h1{font-size:14px; margin:0; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
+    .brand p{margin:0; font-size:12px; color:var(--muted)}
+
+    .nav{display:flex; gap:14px; align-items:center;}
+    .nav a{
+      text-decoration:none;
+      font-size:13px;
+      color:rgba(248,249,255,.92);
+      opacity:.94;
+      padding:10px 10px;
+      border-radius:12px;
+      border:1px solid transparent;
+    }
+    .nav a:hover{border-color:var(--line); background:rgba(255,255,255,.04)}
+
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center; gap:10px;
+      padding:12px 14px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.14);
+      background:rgba(255,255,255,.06);
+      color:var(--text);
+      text-decoration:none;
+      font-weight:800;
+      box-shadow: 0 10px 26px rgba(0,0,0,.25);
+      transition: transform .15s ease, background .15s ease, border-color .15s ease, filter .15s ease;
+      cursor:pointer;
+    }
+    .btn:hover{transform: translateY(-1px); background:rgba(255,255,255,.085); border-color:rgba(255,255,255,.22)}
+    .btn-primary{
+      border:none;
+      background: var(--brand-grad);
+      color:#06060a;
+      box-shadow:
+        0 22px 60px rgba(0,0,0,.42),
+        0 0 28px rgba(0,245,255,.22),
+        0 0 28px rgba(57,255,20,.16);
+      filter:saturate(1.12);
+    }
+    .btn-primary:hover{filter:saturate(1.22) brightness(1.03)}
+
+    .pill{
+      display:inline-flex; gap:8px; align-items:center;
+      padding:8px 12px;
+      border:1px solid rgba(255,255,255,.14);
+      background:rgba(255,255,255,.04);
+      border-radius:999px;
+      color:rgba(248,249,255,.92);
+      font-size:12px;
+      white-space:nowrap;
+    }
+    .dot{
+      width:8px;height:8px;border-radius:99px;
+      background: var(--brand-grad);
+      box-shadow:
+        0 0 0 3px rgba(255,255,255,.04),
+        0 0 14px rgba(0,245,255,.28),
+        0 0 14px rgba(57,255,20,.22);
+    }
+
+    header.hero{padding:28px 0 18px;}
+    .hero-grid{
+      display:grid; gap:18px;
+      grid-template-columns: 1.1fr .9fr;
+      align-items:stretch;
+    }
+    .card{
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-left{
+      padding:0;
+      overflow:hidden;
+      position:relative;
+    }
+    .hero-bg{
+      position:absolute; inset:0;
+      background-image: var(--hero-bg);
+      background-size: cover;
+      background-position: center;
+      filter: saturate(1.08) contrast(1.06);
+      transform: scale(1.02);
+      opacity:.72;
+    }
+    .hero-overlay{
+      position:absolute; inset:0;
+      background:
+        radial-gradient(900px 500px at 10% 10%, rgba(0,245,255,.30), transparent 55%),
+        radial-gradient(900px 500px at 92% 12%, rgba(57,255,20,.26), transparent 55%),
+        radial-gradient(900px 500px at 50% 18%, rgba(58,123,255,.14), transparent 62%),
+        radial-gradient(900px 500px at 50% 88%, rgba(255,43,214,.12), transparent 62%),
+        linear-gradient(180deg, rgba(7,7,12,.55), rgba(7,7,12,.92));
+    }
+    .hero-content{position:relative; padding:22px 20px;}
+    .kicker{display:flex; flex-wrap:wrap; gap:10px; align-items:center; margin-bottom:12px;}
+
+    .hero-title{
+      margin:0 0 10px 0;
+      font-family: "VehicleBreaksDown", Inter, system-ui, sans-serif;
+      font-size: clamp(34px, 5.6vw, 58px);
+      line-height:0.95;
+      letter-spacing:.01em;
+      text-transform: uppercase;
+      text-shadow: 0 18px 55px rgba(0,0,0,.55);
+    }
+    .hero-sub{
+      margin:0 0 16px 0;
+      color:rgba(230,233,250,.92);
+      font-size: 15px;
+      max-width: 58ch;
+    }
+    .hero-cta{display:flex; flex-wrap:wrap; gap:10px; margin-top:14px;}
+    .mini{
+      margin-top:14px;
+      display:flex; gap:10px; flex-wrap:wrap;
+      color:rgba(215,218,240,.9);
+      font-size:12px;
+    }
+    .mini span{
+      display:inline-flex; gap:8px; align-items:center;
+      padding:8px 10px; border:1px solid rgba(255,255,255,.14);
+      border-radius:999px; background:rgba(7,7,12,.35);
+      backdrop-filter: blur(10px);
+    }
+    .check{
+      width:16px;height:16px;border-radius:6px;
+      background: rgba(37,211,102,.16);
+      border:1px solid rgba(37,211,102,.35);
+      display:grid; place-items:center;
+      font-size:12px;
+    }
+
+    .hero-right{padding:16px;}
+    .quote{
+      padding:16px;
+      border-radius:18px;
+      background: linear-gradient(180deg, rgba(18,18,26,.85), rgba(18,18,26,.55));
+      border:1px solid rgba(255,255,255,.10);
+    }
+    .quote h3{
+      margin:0 0 8px;
+      font-family:"VehicleBreaksDown", Inter, system-ui, sans-serif;
+      font-size:18px;
+      letter-spacing:.01em;
+      text-transform: uppercase;
+      line-height:1;
+    }
+    .quote p{margin:0; color:var(--muted); font-size:13px;}
+
+    .filter{
+      margin-top:12px;
+      padding:14px;
+      border-radius:18px;
+      background: linear-gradient(180deg, rgba(21,21,36,.75), rgba(21,21,36,.5));
+      border:1px solid rgba(255,255,255,.10);
+    }
+    .filter h4{margin:0 0 10px; font-size:13px; color:rgba(248,249,255,.92)}
+    .grid3{display:grid; gap:10px; grid-template-columns: repeat(3, minmax(0,1fr));}
+    .opt{
+      width:100%;
+      text-align:left;
+      padding:12px 12px;
+      border-radius:16px;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.04);
+      color: rgba(248,249,255,.95);
+      font-weight:800;
+      cursor:pointer;
+      transition: transform .15s ease, background .15s ease, border-color .15s ease;
+      min-height:58px;
+    }
+    .opt small{display:block; font-weight:700; opacity:.8; margin-top:2px; color:var(--muted)}
+    .opt:hover{transform: translateY(-1px); background: rgba(255,255,255,.06); border-color: rgba(255,255,255,.22)}
+
+    section{padding:18px 0;}
+    .section-title{
+      display:flex; align-items:flex-end; justify-content:space-between; gap:14px;
+      margin-bottom:12px;
+    }
+    .section-title h2{
+      margin:0;
+      font-family:"VehicleBreaksDown", Inter, system-ui, sans-serif;
+      font-size:26px;
+      letter-spacing:.01em;
+      text-transform: uppercase;
+      line-height:1;
+    }
+    .section-title p{margin:0; color:var(--muted); font-size:13px;}
+
+    .products{
+      display:grid; gap:12px;
+      grid-template-columns: repeat(12, 1fr);
+    }
+    .prod{
+      grid-column: span 3;
+      padding:12px;
+      border-radius:18px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.03);
+      overflow:hidden;
+      box-shadow:none;
+      position:relative;
+    }
+    .prod:before{
+      content:"";
+      position:absolute; inset:-1px;
+      border-radius:18px;
+      padding:1px;
+      background: linear-gradient(135deg,
+        rgba(0,245,255,.95),
+        rgba(57,255,20,.90),
+        rgba(0,245,255,.55)
+      );
+      -webkit-mask:
+        linear-gradient(#000 0 0) content-box,
+        linear-gradient(#000 0 0);
+      -webkit-mask-composite: xor;
+              mask-composite: exclude;
+      opacity:.75;
+      pointer-events:none;
+    }
+    .prod-media{
+      width:100%;
+      aspect-ratio: 1 / 1;
+      border-radius:16px;
+      border:1px solid rgba(255,255,255,.12);
+      overflow:hidden;
+      background: rgba(0,0,0,.25);
+    }
+    .prod-media img{
+      width:100%;
+      height:100%;
+      object-fit: cover;
+      display:block;
+      transform: scale(1.01);
+    }
+    .prod h3{margin:10px 0 4px; font-size:14px; letter-spacing:-.01em;}
+    .prod p{margin:0; color:var(--muted); font-size:12.5px;}
+    .prod .tag{
+      margin-top:10px;
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:7px 10px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(7,7,12,.35);
+      font-size:12px;
+      color:rgba(248,249,255,.92);
+    }
+
+    .cta-band{
+      padding:16px;
+      border-radius:20px;
+      border:1px solid rgba(255,255,255,.12);
+      background: linear-gradient(135deg,
+        rgba(0,245,255,.14),
+        rgba(57,255,20,.10),
+        rgba(255,43,214,.08),
+        rgba(58,123,255,.08)
+      );
+      display:flex; gap:12px; align-items:center; justify-content:space-between; flex-wrap:wrap;
+      box-shadow: var(--shadow);
+    }
+    .cta-band h3{
+      margin:0;
+      font-family:"VehicleBreaksDown", Inter, system-ui, sans-serif;
+      font-size:22px;
+      letter-spacing:.01em;
+      text-transform: uppercase;
+      line-height:1;
+    }
+    .cta-band p{margin:0; color:var(--muted); font-size:13px}
+
+    .faq{display:grid; gap:10px; grid-template-columns: repeat(2, minmax(0,1fr));}
+    details{
+      background: rgba(255,255,255,.03);
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:12px 14px;
+    }
+    summary{cursor:pointer; font-weight:900; font-size:13px}
+    details p{margin:8px 0 0; color:var(--muted); font-size:13px}
+
+    footer{
+      padding:26px 0 96px;
+      border-top:1px solid var(--line);
+      background: rgba(0,0,0,.18);
+      margin-top:18px;
+    }
+    .foot{
+      display:flex; gap:12px; align-items:flex-start; justify-content:space-between; flex-wrap:wrap;
+    }
+    .foot small{color:var(--muted)}
+    .credit a{color:rgba(248,249,255,.92); text-decoration:none; border-bottom:1px dashed rgba(255,255,255,.25)}
+    .credit a:hover{border-bottom-color:rgba(255,255,255,.6)}
+
+    .wa-float{
+      position:fixed;
+      right:16px;
+      bottom:16px;
+      z-index:60;
+      width:58px; height:58px;
+      border-radius:20px;
+      background: radial-gradient(18px 18px at 30% 30%, rgba(255,255,255,.22), transparent 62%), rgba(37,211,102,.98);
+      border:1px solid rgba(255,255,255,.22);
+      box-shadow: 0 18px 55px rgba(0,0,0,.5);
+      display:grid; place-items:center;
+      text-decoration:none;
+      transform: translateZ(0);
+    }
+    .wa-float:hover{filter:brightness(1.03)}
+    .wa-ico{width:28px; height:28px; display:block}
+
+    @media (max-width: 980px){
+      .hero-grid{grid-template-columns:1fr}
+      .grid3{grid-template-columns:1fr}
+      .prod{grid-column: span 12}
+      .nav a{display:none}
+      .nav .btn{display:inline-flex}
+      .faq{grid-template-columns:1fr}
+    }
+    @media (max-width: 520px){
+      .topbar-inner{gap:10px}
+      .brand p{display:none}
+    }
+  </style>
+</head>
+
+<body>
+  <div class="topbar">
+    <div class="wrap">
+      <div class="topbar-inner">
+        <div class="brand">
+          <div class="logoWrap" aria-hidden="true">
+            <div class="logoInner">
+              <img class="logoImg" src="https://iili.io/fspAAla.md.jpg" alt="NOXH Estampados logo">
+            </div>
+          </div>
+          <div style="min-width:0">
+            <h1>NOXH Estampados</h1>
+            <p>Remeras lisas • Personalizadas • Estampas premium</p>
+          </div>
+        </div>
+        <nav class="nav" aria-label="Navegación">
+          <a href="#productos">Productos</a>
+          <a href="#como">Cómo trabajamos</a>
+          <a href="#faq">FAQ</a>
+          <a class="btn btn-primary" id="ctaTop" href="#">Pedir mockup</a>
+        </nav>
+      </div>
+    </div>
+  </div>
+
+  <header class="hero">
+    <div class="wrap">
+      <div class="hero-grid">
+        <div class="card hero-left">
+          <div class="hero-bg" aria-hidden="true"></div>
+          <div class="hero-overlay" aria-hidden="true"></div>
+
+          <div class="hero-content">
+            <div class="kicker">
+              <span class="pill"><span class="dot"></span> Empresa textil</span>
+              <span class="pill"><span class="dot" style="background:rgba(37,211,102,.95)"></span> Atención por WhatsApp</span>
+              <span class="pill"><span class="dot"></span> Pedí tu mockup</span>
+            </div>
+
+            <h2 class="hero-title">Tu marca empieza en una remera</h2>
+            <p class="hero-sub">
+              Fabricamos prendas lisas y personalizadas: <b>oversize</b>, <b>básicas</b> y <b>estampas premium</b>.
+              Si ya tenés idea o logo, te armamos un <b>mockup</b> y cotizamos rápido.
+            </p>
+
+            <div class="hero-cta">
+              <a class="btn btn-primary" id="ctaHero" href="#">Quiero mi mockup</a>
+              <a class="btn" id="ctaPrice" href="#">Cotizar ahora</a>
+              <a class="btn" href="#productos">Ver productos</a>
+            </div>
+
+            <div class="mini" aria-label="beneficios">
+              <span><span class="check">✓</span> Calidad de estampa</span>
+              <span><span class="check">✓</span> Talles & guía</span>
+              <span><span class="check">✓</span> Unidad y por mayor</span>
+            </div>
+          </div>
+        </div>
+
+        <aside class="card hero-right">
+          <div class="quote">
+            <h3>Para cotizar bien</h3>
+            <p>Tipo de prenda, cantidad y diseño (logo/idea). Con eso te pasamos precio y tiempos.</p>
+          </div>
+
+          <div class="filter">
+            <h4>Elegí tu consulta (respuesta más rápida):</h4>
+            <div class="grid3">
+              <button class="opt" data-quick="mockup">
+                Pedir mockup
+                <small>tengo logo/idea</small>
+              </button>
+              <button class="opt" data-quick="mayor">
+                Precio por mayor
+                <small>cantidades</small>
+              </button>
+              <button class="opt" data-quick="unidad">
+                Solo 1 remera
+                <small>unidad</small>
+              </button>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="productos">
+      <div class="wrap">
+        <div class="section-title">
+          <div>
+            <h2>Productos</h2>
+            <p>Ejemplos reales. Tocá “Cotizar” y se arma el mensaje automático.</p>
+          </div>
+        </div>
+
+        <div class="products" aria-label="Productos">
+          <article class="prod">
+            <div class="prod-media">
+              <img src="https://iili.io/fsmVuDu.th.jpg" alt="Producto 1 NOXH">
+            </div>
+            <h3>Producto 1</h3>
+            <p>Remera personalizada / mockup.</p>
+            <span class="tag">Mockup + cotización</span>
+          </article>
+
+          <article class="prod">
+            <div class="prod-media">
+              <img src="https://iili.io/fsDmS7p.md.jpg" alt="Producto 2 NOXH">
+            </div>
+            <h3>Producto 2</h3>
+            <p>Oversize / urbano.</p>
+            <span class="tag">Consultá talles</span>
+          </article>
+
+          <article class="prod">
+            <div class="prod-media">
+              <img src="https://iili.io/fsDmkrv.md.jpg" alt="Producto 3 NOXH">
+            </div>
+            <h3>Producto 3</h3>
+            <p>Básica / clásica.</p>
+            <span class="tag">Unidad o mayor</span>
+          </article>
+
+          <article class="prod">
+            <div class="prod-media">
+              <img src="https://iili.io/fsDm82R.md.jpg" alt="Producto 4 NOXH">
+            </div>
+            <h3>Producto 4</h3>
+            <p>Estampa premium.</p>
+            <span class="tag">DTF / textil</span>
+          </article>
+        </div>
+
+        <div style="height:12px"></div>
+
+        <div class="cta-band">
+          <div>
+            <h3>¿Querés un mockup con tu logo?</h3>
+            <p>Mandanos el diseño + cantidad y te pasamos precio y tiempos.</p>
+          </div>
+          <a class="btn btn-primary" id="ctaBand" href="#">Hablar por WhatsApp</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq">
+      <div class="wrap">
+        <div class="section-title">
+          <div>
+            <h2>Preguntas frecuentes</h2>
+            <p>Lo básico para avanzar rápido.</p>
+          </div>
+        </div>
+
+        <div class="faq">
+          <details>
+            <summary>¿Qué necesitan para cotizar?</summary>
+            <p>Tipo de prenda (oversize/básica), cantidad, talle(s) y el diseño (logo/idea o referencia). Con eso te pasamos precio y tiempos.</p>
+          </details>
+
+          <details>
+            <summary>¿Hacen por mayor?</summary>
+            <p>Sí. Pasanos cantidad aproximada y te armamos la escala de precios.</p>
+          </details>
+
+          <details>
+            <summary>¿Tienen tabla de talles?</summary>
+            <p>Sí. Te la enviamos por WhatsApp y te ayudamos a elegir según el modelo de remera.</p>
+          </details>
+
+          <details>
+            <summary>¿Pueden ayudarme con el diseño?</summary>
+            <p>Te orientamos con referencias y armamos el mockup. Si necesitás diseño desde cero, lo coordinamos aparte.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="footer">
+    <div class="wrap" style="padding-top:16px; padding-bottom:80px">
+      <div class="foot">
+        <div class="brand" style="gap:10px">
+          <div class="logoWrap" aria-hidden="true" style="width:42px;height:42px;border-radius:18px">
+            <div class="logoInner" style="border-radius:16px">
+              <img class="logoImg" src="https://iili.io/fspAAla.md.jpg" alt="NOXH Estampados logo">
+            </div>
+          </div>
+          <div>
+            <div style="font-weight:900">NOXH Estampados</div>
+            <small style="color:var(--muted)">Remeras lisas • Oversize • Estampas premium</small>
+          </div>
+        </div>
+
+        <div class="credit">
+          <small style="color:var(--muted)">Creado y diseñado por <a href="https://ciborg347.onrender.com" target="_blank" rel="noopener">Ciborg 347</a></small>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <a class="wa-float" id="waFloat" href="#" aria-label="Contactar por WhatsApp">
+    <svg class="wa-ico" viewBox="0 0 32 32" aria-hidden="true" focusable="false">
+      <path fill="#fff" d="M19.11 17.47c-.27-.14-1.62-.8-1.87-.89-.25-.09-.43-.14-.61.14-.18.27-.7.89-.86 1.07-.16.18-.32.2-.59.07-.27-.14-1.15-.42-2.19-1.35-.81-.72-1.36-1.61-1.52-1.88-.16-.27-.02-.42.12-.56.12-.12.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.61-1.47-.84-2.02-.22-.53-.44-.46-.61-.47-.16-.01-.34-.01-.52-.01s-.48.07-.73.34c-.25.27-.95.93-.95 2.27s.98 2.64 1.11 2.82c.14.18 1.93 2.95 4.67 4.14.65.28 1.16.45 1.56.58.66.21 1.26.18 1.73.11.53-.08 1.62-.66 1.85-1.29.23-.63.23-1.18.16-1.29-.07-.11-.25-.18-.52-.32z"/>
+      <path fill="#fff" d="M26.62 5.38C23.9 2.66 20.29 1.16 16.5 1.16c-7.83 0-14.2 6.37-14.2 14.2 0 2.49.65 4.92 1.88 7.06L2.19 30.84l8.6-1.96c2.1 1.15 4.47 1.76 5.71 1.76h.01c7.83 0 14.2-6.37 14.2-14.2 0-3.79-1.5-7.4-4.09-10.06zM16.5 28.3h-.01c-2.16 0-4.28-.58-6.13-1.67l-.44-.26-5.11 1.16 1.09-4.98-.29-.51a12 12 0 0 1-1.72-6.16c0-6.62 5.39-12.01 12.01-12.01 3.2 0 6.21 1.24 8.47 3.51a11.9 11.9 0 0 1 3.54 8.5c0 6.62-5.39 12.01-12.01 12.01z"/>
+    </svg>
+  </a>
+
+  <script>
+    const WHATSAPP_NUMBER = "5491128330641"; // Cambiá si hace falta
+    const DEFAULT_NAME = "NOXH Estampados";
+
+    function waLink(message){
+      const text = encodeURIComponent(message);
+      return `https://wa.me/${WHATSAPP_NUMBER}?text=${text}`;
+    }
+    function setHref(el, msg){
+      if(!el) return;
+      el.setAttribute("href", waLink(msg));
+      el.setAttribute("target","_blank");
+      el.setAttribute("rel","noopener");
+    }
+
+    const msgMockup =
+`Hola ${DEFAULT_NAME}! 👋
+Quiero pedir un MOCKUP.
+
+✅ Tipo de remera (oversize/básica):
+✅ Cantidad:
+✅ Talles:
+✅ Diseño: (te lo paso acá / adjunto)
+
+¿Me decís precio y tiempos?`;
+
+    setHref(document.getElementById("ctaTop"), msgMockup);
+    setHref(document.getElementById("ctaHero"), msgMockup);
+    setHref(document.getElementById("ctaBand"), msgMockup);
+    setHref(document.getElementById("waFloat"), msgMockup);
+
+    const waBtn = document.getElementById("waFloat");
+    const footer = document.getElementById("footer");
+
+    function adjustWA(){
+      if(!waBtn || !footer) return;
+      const margin = 16;
+      const footerRect = footer.getBoundingClientRect();
+      const viewportH = window.innerHeight;
+      const overlap = (viewportH - footerRect.top);
+      waBtn.style.bottom = (overlap > 0) ? (margin + overlap + margin) + "px" : margin + "px";
+    }
+
+    window.addEventListener("scroll", adjustWA, {passive:true});
+    window.addEventListener("resize", adjustWA);
+    adjustWA();
+  </script>
+</body>
+</html>
